@@ -48,7 +48,6 @@ public class AuthorServiceImpl implements AuthorService {
         author.setGender(uAuthor.getGender());
         author.setEmail(uAuthor.getEmail());
 
-
         authorRepository.save(uAuthor);
     }
 

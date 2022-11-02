@@ -1,5 +1,6 @@
 package com.rbvgt.lab5.jpa.service;
 
+import com.rbvgt.lab5.jpa.model.Author;
 import java.util.List;
 
 public interface GeneralService <T, ID> {
