@@ -33,6 +33,12 @@ public class DownloadController {
         return new ResponseEntity<>(authorDto, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/average_price")
+    public ResponseEntity<Integer> getAveragePrice() {
+        Integer avgPrice = downloadService.getAveragePrice();
+        return new ResponseEntity<>(avgPrice, HttpStatus.OK);
+    }
+
     @PostMapping(value = "")
     public ResponseEntity<DownloadDto> create(@RequestBody Download download) {
         Download newDownload = downloadService.create(download);

@@ -26,6 +26,11 @@ public class DownloadServiceImpl implements DownloadService {
                 .orElseThrow(() -> new DownloadNotFoundException(id));
     }
 
+    @Override
+    public Integer getAveragePrice() {
+        return downloadRepository.getAveragePrice();
+    }
+
     @Transactional
     public Download create(Download download) {
         downloadRepository.save(download);

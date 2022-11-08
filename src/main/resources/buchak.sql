@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS itunes1;
 USE itunes1;
 
-
+DROP TABLE IF EXISTS `user_card`;
 DROP TABLE IF EXISTS `service_user`;
 DROP TABLE IF EXISTS `download`;
 DROP TABLE IF EXISTS `album_of_song`;
@@ -73,10 +73,16 @@ CREATE TABLE IF NOT exists `service_user`
     `id`              int PRIMARY KEY AUTO_INCREMENT NOT NULL,
     `name_of_profile` varchar(100)                   NOT NULL,
     `Download_id`     int                            ,
+    `user_card_id`    INT                            NOT NULL,
     CONSTRAINT `Service_user_Download`
         FOREIGN KEY (`Download_id`) REFERENCES `download` (`id`)
 ) ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `user_card`
+(
+    id   INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL
+) ENGINE = InnoDB;
 
 INSERT INTO `genre`
 VALUES (1, 'Rock'),
@@ -151,13 +157,18 @@ VALUES (1, 5, 1.5, 45),
        (10, 7, 0.75, 397);
 
 INSERT INTO `service_user`
-VALUES (1, 'Ivan_B', 9),
-       (2, 'bib_bob', 6),
-       (3, 'nnnnnnnn', 4),
-       (4, 'fatily', 2),
-       (5, 'myhip', 8),
-       (6, 'bone', 10),
-       (7, 'cool_girl', 1),
-       (8, 'Masha', 3),
-       (9, 'Vlad_Vt', 7),
-       (10, 'gigant333', 5);
+VALUES (1, 'Ivan_B', 9, 1),
+       (2, 'bib_bob', 6, 3),
+       (3, 'nnnnnnnn', 4, 4),
+       (4, 'fatily', 2, 3),
+       (5, 'myhip', 8, 2),
+       (6, 'bone', 10, 2),
+       (7, 'cool_girl', 1, 4),
+       (8, 'Masha', 3, 1),
+       (9, 'Vlad_Vt', 7, 3),
+       (10, 'gigant333', 5, 2);
+
+INSERT INTO user_card (name) VALUES ('Visa' );
+INSERT INTO user_card (name) VALUES ('MasterCard' );
+INSERT INTO user_card (name) VALUES ('АТБ card');
+INSERT INTO user_card (name) VALUES ('Sence');

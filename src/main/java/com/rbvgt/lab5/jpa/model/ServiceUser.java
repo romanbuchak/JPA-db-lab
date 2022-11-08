@@ -12,6 +12,9 @@ public class ServiceUser {
     @Basic
     @Column(name = "nameOfProfile", length = 25)
     private String nameOfProfile;
+    @Basic
+    @Column(name = "user_card_id")
+    private Integer userCardId;
     @ManyToOne
     @JoinColumn(name = "download_id", referencedColumnName = "id")
     private ServiceUser serviceUser;
@@ -30,6 +33,14 @@ public class ServiceUser {
 
     public void setNameOfProfile(String nameOfProfile) {
         this.nameOfProfile = nameOfProfile;
+    }
+
+    public Integer getUserCardId() {
+        return userCardId;
+    }
+
+    public void setUserCardId(Integer userCardId) {
+        this.userCardId = userCardId;
     }
 
     @Override

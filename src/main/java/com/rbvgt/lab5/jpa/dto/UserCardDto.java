@@ -11,9 +11,8 @@ import org.springframework.hateoas.server.core.Relation;
 @Getter
 @EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Relation(itemRelation = "serviceUser", collectionRelation = "serviceUsers")
-public class ServiceUserDto extends RepresentationModel<ServiceUserDto> {
+@Relation(itemRelation = "userCard", collectionRelation = "userCards")
+public class UserCardDto extends RepresentationModel<UserCardDto> {
     private final Integer id;
-    private final String nameOfProfile;
-    private final Integer userCardId;
+    private final String name;
 }

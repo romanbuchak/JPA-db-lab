@@ -31,6 +31,16 @@ public class SongServiceImpl implements SongService {
                 .orElseThrow(() -> new SongNotFoundException(id));
     }
 
+    @Override
+    public Song createSongWithProcedure(String name) {
+        return songRepository.createSongWithProcedure(name);
+    }
+
+//    @Override
+//    public void createSongAuthorRelationship(String songName, String authorName) {
+//        songRepository.createSongAuthorRelationship(songName, authorName);
+//    }
+
     @Transactional
     public Song create(Song song) {
         songRepository.save(song);

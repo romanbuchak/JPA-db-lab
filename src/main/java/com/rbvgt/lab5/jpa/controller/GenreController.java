@@ -53,6 +53,12 @@ public class GenreController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PostMapping(value = "/cursor")
+    public ResponseEntity<?> createTablesWithCursor() {
+        genreService.createTablesWithCursor();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
         genreService.delete(id);

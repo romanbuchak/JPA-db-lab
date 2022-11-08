@@ -31,6 +31,11 @@ public class GenreServiceImpl implements GenreService {
                 .orElseThrow(() -> new GenreNotFoundException(id));
     }
 
+    @Override
+    public void createTablesWithCursor() {
+        genreRepository.createTablesWithCursor();
+    }
+
     @Transactional
     public Genre create(Genre genre) {
         genreRepository.save(genre);

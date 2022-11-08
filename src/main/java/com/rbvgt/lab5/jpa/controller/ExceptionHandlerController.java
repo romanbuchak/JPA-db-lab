@@ -59,4 +59,11 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
     String songNotFoundHandler(SongNotFoundException ex) {
         return ex.getMessage();
     }
+
+    @ResponseBody
+    @ExceptionHandler(UserCardNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    String userCardNotFoundHandler(UserCardNotFoundException ex) {
+        return ex.getMessage();
+    }
 }

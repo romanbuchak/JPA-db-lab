@@ -4,11 +4,14 @@ import com.rbvgt.lab5.jpa.dto.SongDto;
 import com.rbvgt.lab5.jpa.dto.assembler.SongDtoAssembler;
 import com.rbvgt.lab5.jpa.model.Song;
 import com.rbvgt.lab5.jpa.service.SongService;
+import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -46,6 +49,21 @@ public class SongController {
         SongDto songDto = songDtoAssembler.toModel(newSong);
         return new ResponseEntity<>(songDto, HttpStatus.CREATED);
     }
+
+    @Transactional
+    @PostMapping(value = "/procedure_insert")
+    public ResponseEntity<SongDto> createSongWithProcedure(@RequestBody Song song) {
+        Song newSong = songService.createSongWithProcedure(song.getName());
+        SongDto songDto = songDtoAssembler.toModel(newSong);
+        return new ResponseEntity<>(songDto, HttpStatus.CREATED);
+    }
+
+//    @Transactional
+//    @PostMapping(value = "/relationship")
+//    public ResponseEntity<?> createSongAuthorRelationship(@RequestBody JSONObject jsonObject) {
+//        songService.createSongAuthorRelationship(jsonObject.getAsString("song_name"), jsonObject.getAsString("author_name"));
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<?> update(@RequestBody Song uSong, @PathVariable Integer id) {
