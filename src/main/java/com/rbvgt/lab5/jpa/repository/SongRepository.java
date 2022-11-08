@@ -12,7 +12,4 @@ public interface SongRepository extends JpaRepository<Song, Integer> {
 
     @Procedure("SongParamInsert")
     Song createSongWithProcedure(String name);
-
-//    @Procedure("CreateSongAuthorRelationship")
-//    void createSongAuthorRelationship(String songName, String authorName);
 }

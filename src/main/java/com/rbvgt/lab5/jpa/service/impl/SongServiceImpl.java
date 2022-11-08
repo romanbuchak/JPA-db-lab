@@ -36,11 +36,6 @@ public class SongServiceImpl implements SongService {
         return songRepository.createSongWithProcedure(name);
     }
 
-//    @Override
-//    public void createSongAuthorRelationship(String songName, String authorName) {
-//        songRepository.createSongAuthorRelationship(songName, authorName);
-//    }
-
     @Transactional
     public Song create(Song song) {
         songRepository.save(song);

@@ -58,13 +58,6 @@ public class SongController {
         return new ResponseEntity<>(songDto, HttpStatus.CREATED);
     }
 
-//    @Transactional
-//    @PostMapping(value = "/relationship")
-//    public ResponseEntity<?> createSongAuthorRelationship(@RequestBody JSONObject jsonObject) {
-//        songService.createSongAuthorRelationship(jsonObject.getAsString("song_name"), jsonObject.getAsString("author_name"));
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
-
     @PutMapping(value = "/{id}")
     public ResponseEntity<?> update(@RequestBody Song uSong, @PathVariable Integer id) {
         songService.update(id, uSong);
