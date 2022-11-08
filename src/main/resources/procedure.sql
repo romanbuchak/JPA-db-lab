@@ -1,29 +1,29 @@
 USE `itunes1`;
 
-DROP PROCEDURE IF EXISTS AuthorTestInserts;
-DELIMITER //
-CREATE PROCEDURE AuthorTestInserts(
-    IN new_author_name VARCHAR(50),
-    IN new_author_email VARCHAR(50))
-BEGIN
-    DECLARE max_id INT;
-    DECLARE idx INT;
-SELECT MAX(id) + 1 INTO max_id FROM `author`;
-IF max_id IS NULL THEN
-        SET max_id = 1;
-END IF;
-    SET idx = 1;
-    label1:
-    WHILE idx < 11
-        DO
-            INSERT INTO `author` (name, email)
-            VALUES (CONCAT(new_author_name, max_id), CONCAT(new_author_email, max_id));
-            SET max_id = max_id + 1;
-            SET idx = idx + 1;
-            ITERATE label1;
-END WHILE;
-END //
-DELIMITER ;
+# DROP PROCEDURE IF EXISTS AuthorTestInserts;
+# DELIMITER //
+# CREATE PROCEDURE AuthorTestInserts(
+#     IN new_author_name VARCHAR(50),
+#     IN new_author_email VARCHAR(50))
+# BEGIN
+#     DECLARE max_id INT;
+#     DECLARE idx INT;
+# SELECT MAX(id) + 1 INTO max_id FROM `author`;
+# IF max_id IS NULL THEN
+#         SET max_id = 1;
+# END IF;
+#     SET idx = 1;
+#     label1:
+#     WHILE idx < 11
+#         DO
+#             INSERT INTO `author` (name, email)
+#             VALUES (CONCAT(new_author_name, max_id), CONCAT(new_author_email, max_id));
+#             SET max_id = max_id + 1;
+#             SET idx = idx + 1;
+#             ITERATE label1;
+# END WHILE;
+# END //
+# DELIMITER ;
 
 DROP PROCEDURE IF EXISTS SongParamInsert;
 DELIMITER //
@@ -87,4 +87,4 @@ DEALLOCATE PREPARE my_query;
 END LOOP;
 CLOSE my_cursor;
 END //
-DELIMITER;
+DELIMITER ;

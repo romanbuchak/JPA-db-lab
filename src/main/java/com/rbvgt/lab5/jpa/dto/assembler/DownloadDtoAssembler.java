@@ -1,11 +1,7 @@
 package com.rbvgt.lab5.jpa.dto.assembler;
 
 import com.rbvgt.lab5.jpa.controller.DownloadController;
-import com.rbvgt.lab5.jpa.dto.AlbumOfSongDto;
-import com.rbvgt.lab5.jpa.dto.AuthorDto;
 import com.rbvgt.lab5.jpa.dto.DownloadDto;
-import com.rbvgt.lab5.jpa.model.AlbumOfSong;
-import com.rbvgt.lab5.jpa.model.Author;
 import com.rbvgt.lab5.jpa.model.Download;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.Link;
@@ -22,9 +18,6 @@ public class DownloadDtoAssembler implements RepresentationModelAssembler<Downlo
                 .id(entity.getId())
                 .price(entity.getPrice())
                 .quantity(entity.getQuantity())
-
-                //.songId(entity.getDownload().getId())
-
                 .build();
         Link selfLink = linkTo(methodOn(DownloadController.class).getById(downloadDto.getId())).withSelfRel();
         downloadDto.add(selfLink);

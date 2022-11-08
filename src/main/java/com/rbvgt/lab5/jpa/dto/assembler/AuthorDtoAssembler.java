@@ -1,9 +1,7 @@
 package com.rbvgt.lab5.jpa.dto.assembler;
 
 import com.rbvgt.lab5.jpa.controller.AuthorController;
-import com.rbvgt.lab5.jpa.dto.AlbumOfSongDto;
 import com.rbvgt.lab5.jpa.dto.AuthorDto;
-import com.rbvgt.lab5.jpa.model.AlbumOfSong;
 import com.rbvgt.lab5.jpa.model.Author;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.Link;

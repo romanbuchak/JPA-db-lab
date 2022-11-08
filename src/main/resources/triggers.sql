@@ -2,7 +2,7 @@ USE `itunes1`;
 
 DELIMITER //
 DROP TRIGGER IF EXISTS CreateDownloadCheckUserCard //
-CREATE TRIGGER AddDownloadCheckUserCard
+CREATE TRIGGER CreateDownloadCheckUserCard
     BEFORE INSERT
     ON `itunes1`.`service_user` FOR EACH ROW
 BEGIN

@@ -3,7 +3,6 @@ package com.rbvgt.lab5.jpa.repository;
 import com.rbvgt.lab5.jpa.model.Download;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -4,7 +4,6 @@ import com.rbvgt.lab5.jpa.dto.SongDto;
 import com.rbvgt.lab5.jpa.dto.assembler.SongDtoAssembler;
 import com.rbvgt.lab5.jpa.model.Song;
 import com.rbvgt.lab5.jpa.service.SongService;
-import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
