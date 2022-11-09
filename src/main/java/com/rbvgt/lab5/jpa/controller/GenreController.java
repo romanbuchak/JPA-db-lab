@@ -40,7 +40,7 @@ public class GenreController {
         return new ResponseEntity<>(genreDtos, HttpStatus.OK);
     }
 
-    @PostMapping(value = "")
+    @PostMapping
     public ResponseEntity<GenreDto> create(@RequestBody Genre genre) {
         Genre newGenre = genreService.create(genre);
         GenreDto genreDto = genreDtoAssembler.toModel(newGenre);

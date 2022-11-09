@@ -3,9 +3,9 @@ USE `itunes1`;
 DROP FUNCTION IF EXISTS GetAveragePrice;
 DELIMITER //
 CREATE FUNCTION GetAveragePrice()
-    RETURNS DECIMAL(8, 2)
+    RETURNS DECIMAL(8, 4)
     DETERMINISTIC
 BEGIN
-RETURN (SELECT AVG(price) FROM `download`);
+RETURN (SELECT AVG(quantity) FROM `download`);
 END //
 DELIMITER ;
